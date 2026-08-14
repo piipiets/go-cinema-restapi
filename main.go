@@ -39,5 +39,25 @@ func InitiateRouter(db *sql.DB) {
 		cinemaHandler.CreateCinema,
 	)
 
+	router.GET(
+		"/cinema",
+		cinemaHandler.GetAllCinema,
+	)
+
+	router.GET(
+		"/cinema/:id",
+		cinemaHandler.GetCinemaById,
+	)
+
+	router.PUT(
+		"/cinema/:id",
+		cinemaHandler.UpdateCinema,
+	)
+
+	router.DELETE(
+		"/cinema/delete/:id",
+		cinemaHandler.DeleteCinema,
+	)
+
 	router.Run(":8080")
 }
