@@ -17,12 +17,12 @@ func Initiator() {
 	viper.BindEnv("db.postgres.db_engine", "DB_ENGINE")
 
 	requiredEnv := []string{
-		"PGHOST",
-		"PGPORT",
-		"PGDATABASE",
-		"PGUSER",
-		"PGPASSWORD",
-		"DB_ENGINE",
+		"db.postgres.db_host",
+		"db.postgres.db_port",
+		"db.postgres.db_name",
+		"db.postgres.db_user",
+		"db.postgres.db_password",
+		"db.postgres.db_engine",
 	}
 
 	for _, env := range requiredEnv {
