@@ -1,9 +1,28 @@
 ## Simple REST API using Go and Gin Framework
 
+### Base URL
+
+```text
+https://go-cinema-restapi.up.railway.app
+```
+
+### Database Environment
+
+Set these environment variables before running the app:
+
+```env
+PGHOST=localhost
+PGPORT=5432
+PGDATABASE=cinema
+PGUSER=postgres
+PGPASSWORD=admin
+DB_ENGINE=postgres
+```
+
 ### Sample CURL
 
 **1. Create Cinema**
-<br> curl --location 'http://localhost:8080/cinema' \
+<br> curl --location 'https://go-cinema-restapi.up.railway.app/cinema' \
 --header 'Content-Type: application/json' \
 --data '{
     "name": "XXI Klender",
@@ -11,14 +30,14 @@
     "rate": 4.6
   }'
 
-**3. Get All Cinema**
-<br> curl --location 'http://localhost:8080/cinema'
+**2. Get All Cinema**
+<br> curl --location 'https://go-cinema-restapi.up.railway.app/cinema'
 
-**4. Get Cinema By Id**
-<br> curl --location 'http://localhost:8080/cinema/1'
+**3. Get Cinema By Id**
+<br> curl --location 'https://go-cinema-restapi.up.railway.app/cinema/1'
 
-**5. Update Cinema**
-<br> curl --location --request PUT 'http://localhost:8080/cinema/1' \
+**4. Update Cinema**
+<br> curl --location --request PUT 'https://go-cinema-restapi.up.railway.app/cinema/1' \
 --header 'Content-Type: application/json' \
 --data '{
     "name": "CGV Paris Van Java Updated",
@@ -26,5 +45,5 @@
     "rate": 4.8
   }'
 
-**6. Delete Cinema**
-<br> curl --location --request DELETE 'http://localhost:8080/cinema/delete/1'
+**5. Delete Cinema**
+<br> curl --location --request DELETE 'https://go-cinema-restapi.up.railway.app/cinema/delete/1'

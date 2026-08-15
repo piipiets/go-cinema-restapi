@@ -15,15 +15,17 @@ var (
 )
 
 func Initiator() {
+	dbEngine := viper.GetString("db.postgres.db_engine")
+
 	dsn := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
-		viper.GetString("migration.db.postgres.db_host"),
-		viper.GetInt("migration.db.postgres.db_port"),
-		viper.GetString("migration.db.postgres.db_user"),
-		viper.GetString("migration.db.postgres.db_password"),
-		viper.GetString("migration.db.postgres.db_name"),
+		viper.GetString("db.postgres.db_host"),
+		viper.GetInt("db.postgres.db_port"),
+		viper.GetString("db.postgres.db_user"),
+		viper.GetString("db.postgres.db_password"),
+		viper.GetString("db.postgres.db_name"),
 	)
 
-	DBConnections, err = sql.Open("postgres", dsn)
+	DBConnections, err = sql.Open(dbEngine, dsn)
 
 	// check connection
 	err = DBConnections.Ping()
