@@ -15,16 +15,8 @@ var (
 )
 
 func Initiator() {
-	dbEngine := viper.GetString("db.postgres.db_engine")
-
-	dsn := fmt.Sprintf(
-		"host=%s port=%s user=%s password=%s dbname=%s sslmode=require",
-		viper.GetString("PGHOST"),
-		viper.GetString("PGPORT"),
-		viper.GetString("PGUSER"),
-		viper.GetString("PGPASSWORD"),
-		viper.GetString("PGDATABASE"),
-	)
+	dbEngine := viper.GetString("DB_ENGINE")
+	dsn := viper.GetString("DATABASE_URL")
 
 	DBConnections, err = sql.Open(dbEngine, dsn)
 

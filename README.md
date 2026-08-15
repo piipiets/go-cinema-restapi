@@ -11,11 +11,7 @@ https://go-cinema-restapi.up.railway.app
 Set these environment variables before running the app:
 
 ```env
-PGHOST=localhost
-PGPORT=5432
-PGDATABASE=cinema
-PGUSER=postgres
-PGPASSWORD=admin
+DATABASE_URL=postgresql://postgres:password@host:5432/railway
 DB_ENGINE=postgres
 ```
 

@@ -9,19 +9,11 @@ import (
 func Initiator() {
 	viper.AutomaticEnv()
 
-	viper.BindEnv("PGHOST")
-	viper.BindEnv("PGPORT")
-	viper.BindEnv("PGDATABASE")
-	viper.BindEnv("PGUSER")
-	viper.BindEnv("PGPASSWORD")
+	viper.BindEnv("DATABASE_URL")
 	viper.BindEnv("DB_ENGINE")
 
 	requiredEnv := []string{
-		"PGHOST",
-		"PGPORT",
-		"PGDATABASE",
-		"PGUSER",
-		"PGPASSWORD",
+		"DATABASE_URL",
 		"DB_ENGINE",
 	}
 
